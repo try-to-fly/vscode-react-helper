@@ -19,7 +19,10 @@ import './${name}.scss';
 export class ${componentName} extends Component {
   static propTypes = {}
   static defaultPropTypes = {}
-
+  constructor(props){
+    super(props);
+    autoBind(this);
+  }
   componentDidMount(){}
   render() {
     return (
