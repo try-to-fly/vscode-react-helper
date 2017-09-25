@@ -8,11 +8,13 @@ export const createTestFile = (
   dirPath: string,
   fileHeaderText: string
 ) => {
-  const testFilePath = path.resolve(dirPath, name + ".test.js");
+  const testDirPath = path.resolve(dirPath,'test');
+  fs.mkdirSync(testDirPath);
+  const testFilePath = path.resolve(testDirPath, name + ".test.js");
   const componentName = upperCamelCase(name);
   const str = `${fileHeaderText}import React from 'react';
 import {shallow,render,mount} from 'enzyme';
-import {${componentName}} from './';
+import {${componentName}} from '../';
 
 describe('测试${componentName}组件',()=>{
     it("测试快照", () => {

@@ -19,7 +19,7 @@ import './${name}.scss';
 export class ${componentName} extends Component {
   static propTypes = {}
   static defaultPropTypes = {}
-  
+
   componentDidMount(){}
   render() {
     return (
@@ -28,7 +28,9 @@ export class ${componentName} extends Component {
       </div>
     )
   }
-}`;
+}
+
+export default ${componentName};`;
   fs.writeFileSync(componentPath, str);
   toast.success(`react component：${name}创建成功`);
 }
