@@ -2,7 +2,7 @@
   "name": "react-helper",
   "displayName": "react-helper",
   "description": "react 辅助库",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "yoyo612",
   "engines": {
     "vscode": "^1.5.0"
