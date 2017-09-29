@@ -8,7 +8,7 @@ export const createTestFile = (
   dirPath: string,
   fileHeaderText: string
 ) => {
-  const testDirPath = path.resolve(dirPath,'test');
+  const testDirPath = path.resolve(dirPath,'__test__');
   fs.mkdirSync(testDirPath);
   const testFilePath = path.resolve(testDirPath, name + ".test.js");
   const componentName = upperCamelCase(name);
