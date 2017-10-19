@@ -16,7 +16,7 @@ import autoBind from 'react-autobind';
 import PropTypes from 'prop-types';
 import './${name}.scss';
 
-export class ${componentName} extends Component {
+class ${componentName} extends Component {
   static propTypes = {}
   static defaultProps = {}
   constructor(props){

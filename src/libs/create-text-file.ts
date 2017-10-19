@@ -14,7 +14,7 @@ export const createTestFile = (
   const componentName = upperCamelCase(name);
   const str = `${fileHeaderText}import React from 'react';
 import {shallow,render,mount} from 'enzyme';
-import {${componentName}} from '../';
+import ${componentName} from '../';
 
 describe('测试${componentName}组件',()=>{
     it("测试快照", () => {
