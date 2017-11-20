@@ -8,8 +8,9 @@ import { toast } from './toast';
  * @param dirPath 路径
  */
 export const createScss = (name: string, dirPath: string,fileHeaderText:string) => {
-  const scssPath = path.resolve(dirPath, name + '.scss');
-  const str = `${fileHeaderText}.${name}-wrap{
+  const scssPath = path.resolve(dirPath, name.toLowerCase() + '.scss');
+  const wrapClassName = name.toLowerCase()+'-wrap';
+  const str = `${fileHeaderText}.${wrapClassName}{
 
 }`;
   fs.writeFileSync(scssPath, str);

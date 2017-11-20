@@ -10,14 +10,20 @@ const upperCamelCase = require('uppercamelcase');
 export const createComponent = (name: string, dirPath: string,fileHeaderText:string) => {
   const componentPath = path.resolve(dirPath, 'index.js');
   const componentName = upperCamelCase(name);
+  const wrapClassName = name.toLowerCase()+'-wrap';
   const str =
 `${fileHeaderText}import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import PropTypes from 'prop-types';
-import './${name}.scss';
+import pureRender from 'pureRender-mj';
+import classNames from 'classnames';
+import './${name.toLowerCase()}.scss';
 
+@pureRender()
 class ${componentName} extends Component {
-  static propTypes = {}
+  static propTypes = {
+    className:PropTypes.string
+  }
   static defaultProps = {}
   constructor(props){
     super(props);
@@ -25,8 +31,10 @@ class ${componentName} extends Component {
   }
   componentDidMount(){}
   render() {
+    const {className} = this.props;
+    const wrapCls = classNames('${wrapClassName}',className);
     return (
-      <div className="${name}-wrap">
+      <div className={wrapCls}>
         ${name} text
       </div>
     )
