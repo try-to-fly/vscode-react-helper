@@ -1,48 +1,52 @@
 {
-  "name": "react-helper",
-  "displayName": "react-helper",
-  "description": "react 辅助库",
-  "version": "0.0.8",
-  "publisher": "yoyo612",
-  "engines": {
-    "vscode": "^1.5.0"
-  },
-  "categories": ["Other"],
-  "activationEvents": ["onCommand:extension.createReactComponent"],
-  "main": "./out/src/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.createReactComponent",
-        "title": "在当前目录创建react组件"
-      }
+    "name": "react-helper",
+    "displayName": "react-helper",
+    "description": "react 辅助库",
+    "version": "0.0.9",
+    "publisher": "yoyo612",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
     ],
-    "menus": {
-      "explorer/context": [
-        {
-          "command": "extension.createReactComponent"
+    "activationEvents": [
+        "onCommand:extension.createReactComponent"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.createReactComponent",
+                "title": "在当前目录创建react组件"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.createReactComponent"
+                }
+            ]
         }
-      ]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.32",
+        "@types/node": "^6.0.40",
+        "mocha": "^2.3.3",
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0"
+    },
+    "dependencies": {
+        "uppercamelcase": "^3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/purely-smile/vscode-react-helper"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "@types/mocha": "^2.2.32",
-    "@types/node": "^6.0.40",
-    "mocha": "^2.3.3",
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0"
-  },
-  "dependencies": {
-    "uppercamelcase": "^3.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/purely-smile/vscode-react-helper"
-  }
 }
