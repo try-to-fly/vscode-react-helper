@@ -25,11 +25,19 @@ class ${componentName} extends Component {
     className:PropTypes.string
   }
   static defaultProps = {}
+  static contextTypes = {}
   constructor(props){
     super(props);
     autoBind(this);
   }
+  getChildContext(){}
+  componentWillMount(){}
   componentDidMount(){}
+  componentWillReceiveProps(){}
+  //shouldComponentUpdate(){}
+  componentWillUpdate(){}
+  componentDidUpdate(){}
+  componentWillUnmount(){}
   render() {
     const {className} = this.props;
     const wrapCls = classNames('${wrapClassName}',className);
